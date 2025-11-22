@@ -1,0 +1,10 @@
+<form class="form-wrapper" [formGroup]="form" (ngSubmit)="handelClick()">
+     <div class="form-body">
+    @for (field of fields; track $index) {
+      <app-input  [fields]="field" [form]="form"></app-input>
+    }
+  </div>
+  <div class="action">
+    <button class="btn-submit" type="submit">Submit</button>
+  </div>
+</form>

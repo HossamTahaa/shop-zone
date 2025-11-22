@@ -1,0 +1,47 @@
+.sidebar {
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: sticky;
+  top: 20px; 
+ }
+
+.sidebar h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.sidebar label {
+  font-size: 14px;
+}
+
+.sidebar input,
+.sidebar select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+button {
+  flex: 1;
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+  background: #1976d2;
+  color: white;
+}
+
+button.reset {
+  background: #bdbdbd;
+}

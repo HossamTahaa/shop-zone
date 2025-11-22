@@ -1,0 +1,8 @@
+<div class="container">
+  <div class="header">
+    <h2 class="title">Sign In</h2>
+    <p>Login to access your travelwise account</p>
+  </div>
+  <app-form [fields]="fieldConfigs" (onSubmit)="onSubmit($event)"></app-form>
+   <a class="link" (click)="GoToCreateAccount()">Create New Account</a>
+ </div>

@@ -1,0 +1,20 @@
+<div class="sidebar">
+  <h3>Filter Products</h3>
+
+  <label>Category</label>
+  <select [(ngModel)]="categoryId">
+    <option value="">All Categories</option>
+    <option *ngFor="let cat of categories" [value]="cat.id">{{cat.name}}</option>
+  </select>
+
+  <label>Min Price</label>
+  <input type="number" [(ngModel)]="price_min">
+
+  <label>Max Price</label>
+  <input type="number" [(ngModel)]="price_max">
+
+  <div class="buttons">
+    <button (click)="onApply()">Apply</button>
+    <button class="reset" (click)="onReset()">Reset</button>
+  </div>
+</div>

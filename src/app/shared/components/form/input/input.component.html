@@ -1,0 +1,83 @@
+<div [formGroup]="form">
+  <div class="input-wrapper">
+
+    <!-- Label -->
+    @if(!fields.hideLabel) {
+      <label [attr.for]="fields.accessor">{{ fields.displayName }}</label>
+    }
+
+    <!-- Text / Email / Number / Password / Date -->
+    @if (fields.type === 'text' || fields.type === 'email' || fields.type === 'number' || fields.type === 'password' || fields.type === 'date') {
+      <input
+        class="form-input"
+        [type]="fields.type"
+        [id]="fields.accessor"
+        [formControlName]="fields.accessor"
+        [attr.placeholder]="fields.placeholder || ''"
+      />
+    }
+
+    <!-- Textarea -->
+    @if (fields.type === 'textarea') {
+      <textarea
+        class="form-input"
+        [id]="fields.accessor"
+        [formControlName]="fields.accessor"
+        [attr.placeholder]="fields.placeholder || ''">
+      </textarea>
+    }
+
+    <!-- Select -->
+    @if (fields.type === 'select') {
+      <select
+        class="form-input"
+        [formControlName]="fields.accessor"
+        [id]="fields.accessor">
+        <option value="">options..</option>
+        @for (opt of fields.options; track $index) {
+          <option [value]="opt.value">{{ opt.view }}</option>
+        }
+      </select>
+    }
+
+    <!-- Checkbox -->
+    @if (fields.type === 'checkbox') {
+      <div class="checkbox-group" [formArrayName]="fields.accessor">
+        @for (opt of fields.options; track $index) {
+          <label class="checkbox-option">
+            <input type="checkbox" [formControlName]="$index" />
+            {{ opt.view || opt.value }}
+          </label>
+        }
+      </div>
+    }
+
+    <!-- Radio -->
+    @if (fields.type === 'radio') {
+      <div class="radio-group">
+        @for (opt of fields.options; track $index) {
+          <label class="radio-option">
+            <input
+              type="radio"
+              [value]="opt.value"
+              [formControlName]="fields.accessor"
+            />
+            {{ opt.view }}
+          </label>
+        }
+      </div>
+    }
+
+    <!-- Validation Errors -->
+    @if (form.get(fields.accessor)?.invalid && (form.get(fields.accessor)?.dirty || form.get(fields.accessor)?.touched)) {
+      <div class="error-messages">
+        @for (validation of fields.validations; track $index) {
+          @if (form.get(fields.accessor)?.hasError(validation.type)) {
+            <span class="error-text">{{ validation.message }}</span>
+          }
+        }
+      </div>
+    }
+
+  </div>
+</div>

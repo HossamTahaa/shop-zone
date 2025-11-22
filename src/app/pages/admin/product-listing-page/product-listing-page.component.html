@@ -1,0 +1,27 @@
+ <div class="page-layout">
+  <!--Sidebar-->
+  <aside class="sidebar">
+    <app-sidebar-filter (applyFilters)="onApplayFilter($event)"></app-sidebar-filter>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+    <app-loading [loading]="productsState.isLoading()">
+            <button (click)="goToadminPage()">go to admin page </button>
+
+      <div class="products-container">
+        <app-product-card 
+          *ngFor="let p of uiState.paginatedProducts()" 
+          [product]="p">
+        </app-product-card>
+      </div>
+    </app-loading>
+
+    <!--Pagination -->
+    <div class="pagination">
+      <button (click)="uiState.prevPage()" [disabled]="uiState.currentPage() === 1">Prev</button>
+      <button (click)="uiState.nextPage()" [disabled]="uiState.currentPage() === uiState.totalPages()">Next</button>
+    </div>
+
+  </main>
+</div>

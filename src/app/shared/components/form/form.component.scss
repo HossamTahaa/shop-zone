@@ -1,0 +1,36 @@
+ .form-wrapper {
+  max-width: 400px; 
+  margin: 20px auto;
+  padding: 40px;
+  border-radius: 16px;
+  background: #ddd9d9;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+
+.form-body {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.action{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ .btn-submit {
+  width: 100%;
+  background: #0f1011;
+  color: white;
+  border: none;
+  border-radius: 16px;
+  margin: 19px;
+  padding: 9px 0;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+ }
+
+ .btn-submit:hover {
+  background: #3c4144;
+}
+

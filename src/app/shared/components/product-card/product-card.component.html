@@ -1,0 +1,7 @@
+<div class="product-card"  (click)="goToDeatils()" >
+<img [src]="product.images?.[0] || 'https://www.freeiconspng.com/images/no-image-icon'"  alt="{{ product.title }}" onclick=""/>
+ 
+  <h3 class="title">{{ product.title }}</h3>
+  <p class="description">{{ product.description }}</p>
+  <p class="price">{{ product.price }}</p>
+</div>
