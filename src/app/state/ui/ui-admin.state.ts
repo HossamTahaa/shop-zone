@@ -1,8 +1,7 @@
 import { signal, computed } from '@angular/core';
-import { Product } from '../../shared/models/fieldConfig';
-import { AdminState } from './../adminPage/adminState';
+ import { AdminState } from '../adminState';
 
-export class AdminUIState {
+export class UiAdminState  {
   currentPage = signal(1);
   pageSize = 20;  
 

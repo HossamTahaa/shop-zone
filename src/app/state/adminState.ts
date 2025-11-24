@@ -1,6 +1,6 @@
 import { Injectable, signal } from '@angular/core';
-import { Product } from '../../shared/models/fieldConfig';
-import { ApiServiceService } from '../../shared/services/api.service.service';
+import { Product } from '../shared/models/fieldConfig';
+ import { ApiServiceService } from '../shared/services/api.service.service';
  
 @Injectable({ providedIn: 'root' })
 export class AdminState {

@@ -7,8 +7,7 @@
   <!-- Main Content -->
   <main class="content">
     <app-loading [loading]="productsState.isLoading()">
-            <button (click)="goToadminPage()">go to admin page </button>
-
+ 
       <div class="products-container">
         <app-product-card 
           *ngFor="let p of uiState.paginatedProducts()" 
