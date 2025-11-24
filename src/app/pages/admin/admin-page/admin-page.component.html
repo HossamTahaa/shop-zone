@@ -1,26 +1,30 @@
- <app-loading>
-    <table *ngIf="!adminState.isLoading() && !adminState.error()">
-  <thead>
-    <tr>
-      <th>Product ID</th>
-      <th>Product Name</th>
-      <th>Category Name</th>
-      <th>Category ID</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let p of adminUI?.paginatedProducts()">
-      <td>{{ p.id }}</td>
-      <td>{{ p.title }}</td>
-      <td>{{ p.category?.name }}</td>
-      <td>{{ p.category?.id }}</td>
-    </tr>
-  </tbody>
-</table>
+<app-loading [loading]="adminState.isLoading()">
+  <div class="admin-container">
+    <table class="modern-table">
+      <thead>
+        <tr>
+          <th>Product ID</th>
+          <th>Product Name</th>
+          <th>Category Name</th>
+          <th>Category ID</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let p of adminUI?.paginatedProducts()">
+          <td>{{ p.id }}</td>
+          <td>{{ p.title }}</td>
+          <td>{{ p.category?.name }}</td>
+          <td>{{ p.category?.id }}</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
 
-   <!--Pagination -->
+    <!-- Pagination -->
     <div class="pagination">
-      <button (click)="adminUI?.prevPage()" [disabled]="adminUI?.currentPage()===1">Prev</button>
+      <button (click)="adminUI?.prevPage()" [disabled]="adminUI?.currentPage() === 1">Prev</button>
       <button (click)="adminUI?.nextPage()" [disabled]="adminUI?.currentPage() === adminUI?.totalPages()">Next</button>
-     </div>
+    </div>
+  </div>
 </app-loading>

@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProductsState } from '../../../state/productsState/productsState';
+import { ProductsState } from '../../../state/productsState';
 import { LoadingComponent } from '../../../shared/components/loading/loading.component';
 import { ProductCardComponent } from '../../../shared/components/product-card/product-card.component';
 import { SidebarFilterComponent } from '../../../shared/components/sidebar-filter/sidebar-filter.component';
-import { ProductsUIState } from '../../../state/ui/ui.state';
+import { UiProductState } from '../../../state/ui/ui.product.state';
 import { Router } from '@angular/router';
 
 @Component({
@@ -15,9 +15,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./product-listing-page.component.scss'],
 })
 export class ProductListingPageComponent {
-  uiState: ProductsUIState;
+  uiState: UiProductState;
   constructor(private router: Router,public productsState: ProductsState) {
-    this.uiState = new ProductsUIState(productsState);
+    this.uiState = new UiProductState(productsState);
   }
    ngOnInit(): void {
     this.productsState.loadProducts();
@@ -26,7 +26,5 @@ export class ProductListingPageComponent {
      this.productsState.updateFilter(filters)
       this.productsState.applyFilters();
    }
-     goToadminPage(){
-    this.router.navigate(['/admin/admin-page'])
-   }
+   
 }

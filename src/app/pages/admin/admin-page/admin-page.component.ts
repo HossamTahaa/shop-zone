@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { AdminState } from '../../../state/adminPage/adminState';
-import { AdminUIState } from '../../../state/ui/adminUi';
+import { AdminState } from '../../../state/adminState';
+import { UiAdminState } from '../../../state/ui/ui-admin.state';
 import { LoadingComponent } from '../../../shared/components/loading/loading.component';
 
  @Component({
@@ -14,12 +14,12 @@ import { LoadingComponent } from '../../../shared/components/loading/loading.com
 })
 export class AdminPageComponent {
  
-    adminUI?: AdminUIState;
+    adminUI?: UiAdminState;
     constructor(public adminState: AdminState){}
 
   ngOnInit() {
-  this.adminUI = new AdminUIState(this.adminState);
+  this.adminUI = new UiAdminState(this.adminState);
   this.adminState.loadProducts();
 }
-      
+
 }
