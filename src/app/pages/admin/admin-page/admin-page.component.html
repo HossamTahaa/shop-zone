@@ -11,12 +11,16 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let p of adminUI?.paginatedProducts()">
+        <tr *ngFor="let p of adminUI?.paginatedProducts(); trackBy: trackByProductId">
           <td>{{ p.id }}</td>
           <td>{{ p.title }}</td>
           <td>{{ p.category?.name }}</td>
           <td>{{ p.category?.id }}</td>
-          <td></td>
+          <td class="action">
+            <button class="view-btn" (click)="goToView(p.id)">View</button>
+            <button class="edit-btn" (click)="goToEdit(p.id)">Edit</button>
+            <button class="delete-btn" (click)="goToDelete(p.id)">Delete</button>
+          </td>
         </tr>
       </tbody>
     </table>

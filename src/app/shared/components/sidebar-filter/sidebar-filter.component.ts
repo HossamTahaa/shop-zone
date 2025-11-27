@@ -21,8 +21,6 @@ export class SidebarFilterComponent {
      async ngOnInit(){
      this.categories = await this.api.getAllCategories();
     }
-
-
    @Output() applyFilters = new EventEmitter<any>();
 
   onApply() {

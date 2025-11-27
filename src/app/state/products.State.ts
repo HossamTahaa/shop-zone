@@ -1,5 +1,5 @@
 import { Injectable, signal } from '@angular/core';
- import { ApiServiceService } from '../shared/services/api.service.service';
+import { ApiServiceService } from '../shared/services/api.service.service';
 import { Product } from '../shared/models/fieldConfig';
 
 @Injectable({

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProductsState } from '../../../state/productsState';
+import { ProductsState } from '../../../state/products.State';
 import { LoadingComponent } from '../../../shared/components/loading/loading.component';
 import { ProductCardComponent } from '../../../shared/components/product-card/product-card.component';
 import { SidebarFilterComponent } from '../../../shared/components/sidebar-filter/sidebar-filter.component';

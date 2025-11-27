@@ -14,12 +14,13 @@ import { InputComponent } from './input/input.component';
  })
  export class FormComponent {
    @Input() fields!: FieldConfig[];
-   @Output() onSubmit: EventEmitter<void> = new EventEmitter<void>();
+   @Output() onSubmit: EventEmitter<any> = new EventEmitter<any>();
    submited: boolean = false;
    form!: FormGroup;
    constructor(private formGenerator: FormGeneratorService) {}
    
    ngOnInit(): void {
+    
      if (this.fields) {
        this.form = this.formGenerator.createForm(this.fields);
      }

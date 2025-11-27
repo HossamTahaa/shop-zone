@@ -1,5 +1,5 @@
 import { signal, computed } from '@angular/core';
-import { ProductsState } from '../productsState';
+import { ProductsState } from '../products.State';
 
 export class UiProductState  {
   currentPage = signal(1);
