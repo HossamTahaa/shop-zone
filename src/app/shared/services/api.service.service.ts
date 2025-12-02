@@ -27,7 +27,7 @@ export class ApiServiceService {
     try {
       const response = await axios.get(GET_ALL_CATEGORIES);
       return response.data;
-    } catch (error) {
+    } catch (error) { 
       console.error('Error fe tching products', error);
       return [];
     }
