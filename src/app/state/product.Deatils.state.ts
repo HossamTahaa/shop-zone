@@ -11,7 +11,7 @@ export class ProductDeatilsState{
   error = signal<string | null>(null);
   product = signal<Product | null>(null);  
 
-  constructor( private apiService:ApiServiceService){}
+  constructor(private apiService: ApiServiceService){}
 
 
   async loadProductDetails(id: number) {

@@ -1,1 +1,17 @@
-<p>change-product-page works!</p>
+<app-loading [loading]="state.isLoading()"> 
+<div class="change-product-page">
+  <h2>{{ pageTitle }}</h2>
+
+  <!-- Form Component -->
+<app-form 
+    *ngIf="formFields.length"
+    [fields]="formFields" 
+    (onSubmit)="handleSubmit($event)">
+</app-form>
+
+  <!-- Submit Button -->
+  <div class="form-actions">
+    <button (click)="handleSubmit(formFields)" class="submit-btn">{{ buttonText }}</button>
+  </div>
+</div>
+</app-loading>

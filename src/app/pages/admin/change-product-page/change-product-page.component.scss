@@ -1,0 +1,41 @@
+.change-product-page {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.change-product-page h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.submit-btn {
+  padding: 0.7rem 1.5rem;
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background: #0d47a1;
+}
+
+.loading {
+  color: #1976d2;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.error {
+  color: red;
+  text-align: center;
+  margin-top: 1rem;
+}

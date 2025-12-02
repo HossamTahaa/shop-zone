@@ -12,7 +12,8 @@ const routes: Routes = [
     children: [
         { path: '', redirectTo: 'product-listing-page', pathMatch: 'full' }, 
         { path:'admin-page', component: AdminPageComponent},
-        { path:'change-product-page' , component: ChangeProductPageComponent},
+        { path:'change-product-page/:id' , component: ChangeProductPageComponent},
+        { path: 'change-product-page', component: ChangeProductPageComponent },
         { path:'product-deatils-page/:id' , component: ProductDeatilsPageComponent},
         { path:'product-listing-page' , component: ProductListingPageComponent},
     ]

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { ProductDeatilsState } from '../../../state/productDeatils';
+import { ProductDeatilsState } from '../../../state/product.Deatils.state';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from '../../../shared/models/fieldConfig';
 import { Router } from '@angular/router';
@@ -21,8 +21,7 @@ export class ProductDeatilsPageComponent {
    ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'))
     this.productDeatilsState.loadProductDetails(id);
-    console.log('Product ID:', id);
-   }
+    }
    goToProducts(){
     this.router.navigate(['/admin/product-listing-page'])
    }
